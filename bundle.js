@@ -8206,7 +8206,7 @@
 
 	var _dashboard2 = _interopRequireDefault(_dashboard);
 
-	var _configureStore = __webpack_require__(794);
+	var _configureStore = __webpack_require__(798);
 
 	var _configureStore2 = _interopRequireDefault(_configureStore);
 
@@ -31762,11 +31762,23 @@
 
 	var _checkbox2 = _interopRequireDefault(_checkbox);
 
-	var _commandBar = __webpack_require__(791);
+	var _choiceGroup = __webpack_require__(791);
+
+	var _choiceGroup2 = _interopRequireDefault(_choiceGroup);
+
+	var _colorPicker = __webpack_require__(792);
+
+	var _colorPicker2 = _interopRequireDefault(_colorPicker);
+
+	var _commandBar = __webpack_require__(793);
 
 	var _commandBar2 = _interopRequireDefault(_commandBar);
 
-	var _dialog = __webpack_require__(792);
+	var _contextualMenu = __webpack_require__(794);
+
+	var _contextualMenu2 = _interopRequireDefault(_contextualMenu);
+
+	var _dialog = __webpack_require__(796);
 
 	var _dialog2 = _interopRequireDefault(_dialog);
 
@@ -31799,8 +31811,23 @@
 	        ),
 	        _react2.default.createElement(
 	            _officeUiFabricReact.PivotItem,
+	            { linkText: "Choice Group" },
+	            _react2.default.createElement(_choiceGroup2.default, null)
+	        ),
+	        _react2.default.createElement(
+	            _officeUiFabricReact.PivotItem,
+	            { linkText: "Color Picker" },
+	            _react2.default.createElement(_colorPicker2.default, null)
+	        ),
+	        _react2.default.createElement(
+	            _officeUiFabricReact.PivotItem,
 	            { linkText: "Command Bar" },
 	            _react2.default.createElement(_commandBar2.default, null)
+	        ),
+	        _react2.default.createElement(
+	            _officeUiFabricReact.PivotItem,
+	            { linkText: "Contextual Menu" },
+	            _react2.default.createElement(_contextualMenu2.default, null)
 	        ),
 	        _react2.default.createElement(
 	            _officeUiFabricReact.PivotItem,
@@ -49373,12 +49400,14 @@
 	    // Hide Actions
 	    Hide: {
 	        Dialog: "HideDialog",
-	        Callout: "HideCallout"
+	        Callout: "HideCallout",
+	        ContextualMenu: "HideContextualMenu"
 	    },
 	    // Show Actions
 	    Show: {
 	        Dialog: "ShowDialog",
-	        Callout: "ShowCallout"
+	        Callout: "ShowCallout",
+	        ContextualMenu: "ShowContextualMenu"
 	    }
 	};
 
@@ -49437,6 +49466,82 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	/**
+	 * Choice Group Demo
+	 */
+	var ChoiceGroupDemo = function ChoiceGroupDemo() {
+	    // Render the component
+	    return _react2.default.createElement(
+	        "div",
+	        null,
+	        _react2.default.createElement(_officeUiFabricReact.ChoiceGroup, {
+	            options: [{
+	                key: 'A',
+	                text: 'Option A'
+	            }, {
+	                key: 'B',
+	                text: 'Option B',
+	                checked: true
+	            }, {
+	                key: 'C',
+	                text: 'Option C'
+	            }, {
+	                key: 'D',
+	                text: 'Option D',
+	                disabled: true
+	            }]
+	        })
+	    );
+	};
+
+	exports.default = ChoiceGroupDemo;
+
+/***/ },
+/* 792 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _react = __webpack_require__(299);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _officeUiFabricReact = __webpack_require__(516);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	/**
+	 * Color Picker Demo
+	 */
+	var ColorPickerDemo = function ColorPickerDemo() {
+	    // Render the component
+	    return _react2.default.createElement(_officeUiFabricReact.ColorPicker, { color: "#601720" });
+	};
+
+	exports.default = ColorPickerDemo;
+
+/***/ },
+/* 793 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _react = __webpack_require__(299);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _officeUiFabricReact = __webpack_require__(516);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	/**
 	 * Command Bar Demo
 	 */
 	var CommandBarDemo = function CommandBarDemo() {
@@ -49452,31 +49557,31 @@
 	                return event.preventDefault();
 	            },
 	            items: [{
-	                key: 'emailMessage',
-	                name: 'Email message',
-	                icon: 'Mail'
+	                key: "emailMessage",
+	                name: "Email Message",
+	                icon: "Mail"
 	            }, {
-	                key: 'calendarEvent',
-	                name: 'Calendar event',
-	                icon: 'Calendar'
+	                key: "calendarEvent",
+	                name: "Calendar Event",
+	                icon: "Calendar"
 	            }]
 	        }, {
 	            key: "upload",
-	            name: 'Upload',
+	            name: "Upload",
 	            icon: "Upload"
 	        }],
 	        farItems: [{
-	            key: 'sort',
-	            name: 'Sort',
-	            icon: 'SortLines'
+	            key: "sort",
+	            name: "Sort",
+	            icon: "SortLines"
 	        }, {
-	            key: 'tile',
-	            name: 'Grid view',
-	            icon: 'Tiles'
+	            key: "grid",
+	            name: "Grid View",
+	            icon: "Tiles"
 	        }, {
-	            key: 'info',
-	            name: 'Info',
-	            icon: 'Info'
+	            key: "info",
+	            name: "Info",
+	            icon: "Info"
 	        }]
 	    });
 	};
@@ -49484,7 +49589,7 @@
 	exports.default = CommandBarDemo;
 
 /***/ },
-/* 792 */
+/* 794 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -49501,7 +49606,253 @@
 
 	var _reactRedux = __webpack_require__(475);
 
-	var _dialogActions = __webpack_require__(793);
+	var _contextualMenuActions = __webpack_require__(795);
+
+	var contextualMenuActions = _interopRequireWildcard(_contextualMenuActions);
+
+	var _officeUiFabricReact = __webpack_require__(516);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	/**
+	 * Contextual Menu Demo
+	 */
+	var ContextualMenuDemo = function ContextualMenuDemo(props) {
+	    var showContextualMenu = props.showContextualMenu;
+
+	    // Method to hide the contextual menu
+
+	    var hide = function hide() {
+	        // Hide the contextual menu
+	        props.actions.hide();
+	    };
+
+	    // The button click event
+	    var _onClick = function _onClick(event) {
+	        // Disable postback
+	        event.preventDefault();
+
+	        // Show the contextual menu
+	        props.actions.show();
+	    };
+
+	    // Render the component
+	    return _react2.default.createElement(
+	        "div",
+	        null,
+	        _react2.default.createElement(
+	            _officeUiFabricReact.Button,
+	            {
+	                id: "targetElement",
+	                onClick: function onClick(event) {
+	                    return _onClick(event);
+	                }
+	            },
+	            "Show Menu"
+	        ),
+	        showContextualMenu && _react2.default.createElement(_officeUiFabricReact.ContextualMenu, {
+	            showFocuOnMount: true,
+	            target: "#targetElement",
+	            onDismiss: hide,
+	            directionalHint: _officeUiFabricReact.DirectionalHint.bottomRightEdge,
+	            items: [{
+	                key: 'newItem',
+	                iconProps: {
+	                    iconName: _officeUiFabricReact.IconName.Add
+	                },
+	                subMenuProps: {
+	                    items: [{
+	                        key: 'emailMessage',
+	                        name: 'Email message',
+	                        title: 'Create an email'
+	                    }, {
+	                        key: 'calendarEvent',
+	                        name: 'Calendar event',
+	                        title: 'Create a calendar event'
+	                    }]
+	                },
+	                name: 'New'
+	            }, {
+	                key: 'upload',
+	                onClick: function onClick() {
+	                    undefined.setState({ showCallout: true });
+	                },
+	                iconProps: {
+	                    iconName: _officeUiFabricReact.IconName.Upload,
+	                    style: {
+	                        color: 'salmon'
+	                    }
+	                },
+	                name: 'Upload (Custom Color)',
+	                title: 'Upload a file'
+	            }, {
+	                key: 'divider_1',
+	                name: '-'
+	            }, {
+	                key: 'rename',
+	                name: 'Rename'
+	            }, {
+	                key: 'properties',
+	                name: 'Properties'
+	            }, {
+	                key: 'disabled',
+	                name: 'Disabled item',
+	                disabled: true
+	            }, {
+	                key: 'divider_2',
+	                name: '-'
+	            }, {
+	                key: 'share',
+	                iconProps: {
+	                    iconName: _officeUiFabricReact.IconName.Share
+	                },
+	                subMenuProps: {
+	                    items: [{
+	                        key: 'sharetoemail',
+	                        name: 'Share to Email',
+	                        iconProps: {
+	                            iconName: _officeUiFabricReact.IconName.Mail
+	                        }
+	                    }, {
+	                        key: 'sharetofacebook',
+	                        name: 'Share to Facebook'
+	                    }, {
+	                        key: 'sharetotwitter',
+	                        name: 'Share to Twitter',
+	                        iconProps: {
+	                            iconName: _officeUiFabricReact.IconName.Share
+	                        },
+	                        subMenuProps: {
+	                            items: [{
+	                                key: 'sharetoemail_1',
+	                                name: 'Share to Email',
+	                                title: 'Share to Email',
+	                                iconProps: {
+	                                    iconName: _officeUiFabricReact.IconName.Mail
+	                                }
+	                            }, {
+	                                key: 'sharetofacebook_1',
+	                                name: 'Share to Facebook',
+	                                title: 'Share to Facebook'
+	                            }, {
+	                                key: 'sharetotwitter_1',
+	                                name: 'Share to Twitter',
+	                                title: 'Share to Twitter',
+	                                iconProps: {
+	                                    iconName: _officeUiFabricReact.IconName.Share
+	                                }
+	                            }]
+	                        }
+	                    }]
+	                },
+	                name: 'Share'
+	            }, {
+	                key: 'print',
+	                iconProps: {
+	                    iconName: _officeUiFabricReact.IconName.Print
+	                },
+	                name: 'Print'
+	            }, {
+	                key: 'music',
+	                iconProps: {
+	                    iconName: _officeUiFabricReact.IconName.MusicInCollectionFill
+	                },
+	                name: 'Music'
+	            }, {
+	                key: 'divider_3',
+	                name: '-'
+	            }, {
+	                key: 'Dattabase',
+	                name: 'Go to Dattabase',
+	                href: 'http://dattabase.com'
+	            }]
+	        })
+	    );
+	};
+
+	/**
+	 * Properties
+	 */
+	ContextualMenuDemo.propTypes = {
+	    showContextualMenu: _react.PropTypes.bool
+	};
+
+	/**
+	 * Connections
+	 */
+	exports.default = (0, _reactRedux.connect)(
+	/**
+	 * State to Property Mapper
+	 */
+	function (state, ownProps) {
+	    return {
+	        showContextualMenu: state.contextualMenu.showContextualMenu
+	    };
+	},
+	/**
+	 * Actions Mapper
+	 */
+	function (dispatch) {
+	    return {
+	        actions: (0, _redux.bindActionCreators)(contextualMenuActions, dispatch)
+	    };
+	})(ContextualMenuDemo);
+
+/***/ },
+/* 795 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.hide = hide;
+	exports.show = show;
+
+	var _actionTypes = __webpack_require__(789);
+
+	var _actionTypes2 = _interopRequireDefault(_actionTypes);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	// Action to hide the contextual menu
+	function hide() {
+	    return {
+	        type: _actionTypes2.default.Hide.ContextualMenu,
+	        visible: false
+	    };
+	}
+
+	// Action to show the contextual menu
+	function show() {
+	    return {
+	        type: _actionTypes2.default.Show.ContextualMenu,
+	        visible: true
+	    };
+	}
+
+/***/ },
+/* 796 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _react = __webpack_require__(299);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _redux = __webpack_require__(486);
+
+	var _reactRedux = __webpack_require__(475);
+
+	var _dialogActions = __webpack_require__(797);
 
 	var dialogActions = _interopRequireWildcard(_dialogActions);
 
@@ -49593,7 +49944,7 @@
 	})(DialogDemo);
 
 /***/ },
-/* 793 */
+/* 797 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -49627,7 +49978,7 @@
 	}
 
 /***/ },
-/* 794 */
+/* 798 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -49639,11 +49990,11 @@
 
 	var _redux = __webpack_require__(486);
 
-	var _reducers = __webpack_require__(795);
+	var _reducers = __webpack_require__(799);
 
 	var _reducers2 = _interopRequireDefault(_reducers);
 
-	var _reduxThunk = __webpack_require__(799);
+	var _reduxThunk = __webpack_require__(804);
 
 	var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
@@ -49654,7 +50005,7 @@
 	}
 
 /***/ },
-/* 795 */
+/* 799 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -49665,11 +50016,15 @@
 
 	var _redux = __webpack_require__(486);
 
-	var _calloutReducer = __webpack_require__(796);
+	var _calloutReducer = __webpack_require__(800);
 
 	var _calloutReducer2 = _interopRequireDefault(_calloutReducer);
 
-	var _dialogReducer = __webpack_require__(798);
+	var _contextualMenuReducer = __webpack_require__(802);
+
+	var _contextualMenuReducer2 = _interopRequireDefault(_contextualMenuReducer);
+
+	var _dialogReducer = __webpack_require__(803);
 
 	var _dialogReducer2 = _interopRequireDefault(_dialogReducer);
 
@@ -49677,13 +50032,14 @@
 
 	var rootReducer = (0, _redux.combineReducers)({
 	    callout: _calloutReducer2.default,
+	    contextualMenu: _contextualMenuReducer2.default,
 	    dialog: _dialogReducer2.default
 	});
 
 	exports.default = rootReducer;
 
 /***/ },
-/* 796 */
+/* 800 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -49697,7 +50053,7 @@
 
 	var _actionTypes2 = _interopRequireDefault(_actionTypes);
 
-	var _initialState = __webpack_require__(797);
+	var _initialState = __webpack_require__(801);
 
 	var _initialState2 = _interopRequireDefault(_initialState);
 
@@ -49733,7 +50089,7 @@
 	}
 
 /***/ },
-/* 797 */
+/* 801 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -49743,11 +50099,62 @@
 	});
 	exports.default = {
 	    showCallout: false,
+	    showContextualMenu: false,
 	    showDialog: false
 	};
 
 /***/ },
-/* 798 */
+/* 802 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.default = contextualMenuReducer;
+
+	var _actionTypes = __webpack_require__(789);
+
+	var _actionTypes2 = _interopRequireDefault(_actionTypes);
+
+	var _initialState = __webpack_require__(801);
+
+	var _initialState2 = _interopRequireDefault(_initialState);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	/**
+	 * Contextual Menu Reducer
+	 */
+	function contextualMenuReducer() {
+	    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _initialState2.default;
+	    var action = arguments[1];
+
+	    // Handle the actions
+	    switch (action.type) {
+	        // Contextual Menu Actions
+	        case _actionTypes2.default.Hide.ContextualMenu:
+	        case _actionTypes2.default.Show.ContextualMenu:
+	            // Copy the state
+	            return Object.assign(
+	            // Start w/ a new object
+	            {},
+	            // Copy the state object
+	            state,
+	            // Update the state
+	            {
+	                showContextualMenu: action.visible
+	            });
+
+	        // Action is not handled by this reducer
+	        default:
+	            return state;
+	    }
+	}
+
+/***/ },
+/* 803 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -49761,7 +50168,7 @@
 
 	var _actionTypes2 = _interopRequireDefault(_actionTypes);
 
-	var _initialState = __webpack_require__(797);
+	var _initialState = __webpack_require__(801);
 
 	var _initialState2 = _interopRequireDefault(_initialState);
 
@@ -49797,7 +50204,7 @@
 	}
 
 /***/ },
-/* 799 */
+/* 804 */
 /***/ function(module, exports) {
 
 	'use strict';

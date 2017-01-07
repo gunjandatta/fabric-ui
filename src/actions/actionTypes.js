@@ -5,12 +5,14 @@ const ActionTypes = {
     // Hide Actions
     Hide: {
         Dialog: "HideDialog",
-        Callout: "HideCallout"
+        Callout: "HideCallout",
+        ContextualMenu: "HideContextualMenu"
     },
     // Show Actions
     Show: {
         Dialog: "ShowDialog",
-        Callout: "ShowCallout"
+        Callout: "ShowCallout",
+        ContextualMenu: "ShowContextualMenu"
     }
 };
 

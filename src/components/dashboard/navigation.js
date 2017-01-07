@@ -2,7 +2,10 @@ import React from "react";
 import BreadcrumbDemo from "../demos/breadcrumb";
 import CalloutDemo from "../demos/callout";
 import CheckboxDemo from "../demos/checkbox";
+import ChoiceGroupDemo from "../demos/choiceGroup";
+import ColorPickerDemo from "../demos/colorPicker";
 import CommandBarDemo from "../demos/commandBar";
+import ContextualMenuDemo from "../demos/contextualMenu";
 import DialogDemo from "../demos/dialog";
 import {
     Pivot,
@@ -25,8 +28,17 @@ const Navigation = () => {
             <PivotItem linkText="Checkbox">
                 <CheckboxDemo />
             </PivotItem>
+            <PivotItem linkText="Choice Group">
+                <ChoiceGroupDemo />
+            </PivotItem>
+            <PivotItem linkText="Color Picker">
+                <ColorPickerDemo />
+            </PivotItem>
             <PivotItem linkText="Command Bar">
                 <CommandBarDemo />
+            </PivotItem>
+            <PivotItem linkText="Contextual Menu">
+                <ContextualMenuDemo />
             </PivotItem>
             <PivotItem linkText="Dialog">
                 <DialogDemo />

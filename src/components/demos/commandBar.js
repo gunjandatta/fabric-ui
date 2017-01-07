@@ -18,38 +18,38 @@ const CommandBarDemo = () => {
                     onClick: event => event.preventDefault(),
                     items: [
                         {
-                            key: 'emailMessage',
-                            name: 'Email message',
-                            icon: 'Mail'
+                            key: "emailMessage",
+                            name: "Email Message",
+                            icon: "Mail"
                         },
                         {
-                            key: 'calendarEvent',
-                            name: 'Calendar event',
-                            icon: 'Calendar'
+                            key: "calendarEvent",
+                            name: "Calendar Event",
+                            icon: "Calendar"
                         }
                     ]
                 },
                 {
                     key: "upload",
-                    name: 'Upload',
+                    name: "Upload",
                     icon: "Upload"
                 }
             ]}
             farItems={[
                 {
-                    key: 'sort',
-                    name: 'Sort',
-                    icon: 'SortLines'
+                    key: "sort",
+                    name: "Sort",
+                    icon: "SortLines"
                 },
                 {
-                    key: 'tile',
-                    name: 'Grid view',
-                    icon: 'Tiles'
+                    key: "grid",
+                    name: "Grid View",
+                    icon: "Tiles"
                 },
                 {
-                    key: 'info',
-                    name: 'Info',
-                    icon: 'Info'
+                    key: "info",
+                    name: "Info",
+                    icon: "Info"
                 }
             ]}
         />
