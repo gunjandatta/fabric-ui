@@ -8206,7 +8206,7 @@
 
 	var _dashboard2 = _interopRequireDefault(_dashboard);
 
-	var _configureStore = __webpack_require__(800);
+	var _configureStore = __webpack_require__(801);
 
 	var _configureStore2 = _interopRequireDefault(_configureStore);
 
@@ -31786,6 +31786,10 @@
 
 	var _dialog2 = _interopRequireDefault(_dialog);
 
+	var _dropdown = __webpack_require__(800);
+
+	var _dropdown2 = _interopRequireDefault(_dropdown);
+
 	var _officeUiFabricReact = __webpack_require__(516);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -31842,6 +31846,11 @@
 	            _officeUiFabricReact.PivotItem,
 	            { linkText: "Dialog" },
 	            _react2.default.createElement(_dialog2.default, null)
+	        ),
+	        _react2.default.createElement(
+	            _officeUiFabricReact.PivotItem,
+	            { linkText: "Dropdown" },
+	            _react2.default.createElement(_dropdown2.default, null)
 	        )
 	    );
 	};
@@ -50056,23 +50065,35 @@
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	exports.default = configureStore;
 
-	var _redux = __webpack_require__(486);
+	var _react = __webpack_require__(299);
 
-	var _reducers = __webpack_require__(801);
+	var _react2 = _interopRequireDefault(_react);
 
-	var _reducers2 = _interopRequireDefault(_reducers);
+	var _datePickerData = __webpack_require__(797);
 
-	var _reduxThunk = __webpack_require__(806);
+	var _datePickerData2 = _interopRequireDefault(_datePickerData);
 
-	var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
+	var _officeUiFabricReact = __webpack_require__(516);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	function configureStore(initialState) {
-	    return (0, _redux.createStore)(_reducers2.default, initialState, (0, _redux.applyMiddleware)(_reduxThunk2.default));
-	}
+	/**
+	 * Dropdown Demo
+	 */
+	var DropdownDemo = function DropdownDemo() {
+	    // Render the component
+	    return _react2.default.createElement(
+	        "div",
+	        { style: { width: "250px" } },
+	        _react2.default.createElement(_officeUiFabricReact.Dropdown, {
+	            label: "Select a Letter:",
+	            options: [{ key: 'A', text: 'Option A' }, { key: 'B', text: 'Option B' }, { key: 'C', text: 'Option C' }, { key: 'D', text: 'Option D' }, { key: 'E', text: 'Option E' }, { key: 'F', text: 'Option F' }, { key: 'G', text: 'Option G' }, { key: 'H', text: 'Option H' }, { key: 'I', text: 'Option I' }, { key: 'J', text: 'Option J' }, { key: 'K', text: 'Option K' }, { key: 'L', text: 'Option L' }, { key: 'M', text: 'Option M' }, { key: 'N', text: 'Option N' }, { key: 'O', text: 'Option O' }, { key: 'P', text: 'Option P' }, { key: 'Q', text: 'Option Q' }, { key: 'R', text: 'Option R' }, { key: 'S', text: 'Option S' }, { key: 'T', text: 'Option T' }, { key: 'U', text: 'Option U' }, { key: 'V', text: 'Option V' }, { key: 'W', text: 'Option W' }, { key: 'X', text: 'Option X' }, { key: 'Y', text: 'Option Y' }, { key: 'Z', text: 'Option Z' }]
+	        })
+	    );
+	};
+
+	exports.default = DropdownDemo;
 
 /***/ },
 /* 801 */
@@ -50083,18 +50104,45 @@
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
+	exports.default = configureStore;
 
 	var _redux = __webpack_require__(486);
 
-	var _calloutReducer = __webpack_require__(802);
+	var _reducers = __webpack_require__(802);
+
+	var _reducers2 = _interopRequireDefault(_reducers);
+
+	var _reduxThunk = __webpack_require__(807);
+
+	var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function configureStore(initialState) {
+	    return (0, _redux.createStore)(_reducers2.default, initialState, (0, _redux.applyMiddleware)(_reduxThunk2.default));
+	}
+
+/***/ },
+/* 802 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _redux = __webpack_require__(486);
+
+	var _calloutReducer = __webpack_require__(803);
 
 	var _calloutReducer2 = _interopRequireDefault(_calloutReducer);
 
-	var _contextualMenuReducer = __webpack_require__(804);
+	var _contextualMenuReducer = __webpack_require__(805);
 
 	var _contextualMenuReducer2 = _interopRequireDefault(_contextualMenuReducer);
 
-	var _dialogReducer = __webpack_require__(805);
+	var _dialogReducer = __webpack_require__(806);
 
 	var _dialogReducer2 = _interopRequireDefault(_dialogReducer);
 
@@ -50109,7 +50157,7 @@
 	exports.default = rootReducer;
 
 /***/ },
-/* 802 */
+/* 803 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -50123,7 +50171,7 @@
 
 	var _actionTypes2 = _interopRequireDefault(_actionTypes);
 
-	var _initialState = __webpack_require__(803);
+	var _initialState = __webpack_require__(804);
 
 	var _initialState2 = _interopRequireDefault(_initialState);
 
@@ -50159,7 +50207,7 @@
 	}
 
 /***/ },
-/* 803 */
+/* 804 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -50174,7 +50222,7 @@
 	};
 
 /***/ },
-/* 804 */
+/* 805 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -50188,7 +50236,7 @@
 
 	var _actionTypes2 = _interopRequireDefault(_actionTypes);
 
-	var _initialState = __webpack_require__(803);
+	var _initialState = __webpack_require__(804);
 
 	var _initialState2 = _interopRequireDefault(_initialState);
 
@@ -50224,7 +50272,7 @@
 	}
 
 /***/ },
-/* 805 */
+/* 806 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -50238,7 +50286,7 @@
 
 	var _actionTypes2 = _interopRequireDefault(_actionTypes);
 
-	var _initialState = __webpack_require__(803);
+	var _initialState = __webpack_require__(804);
 
 	var _initialState2 = _interopRequireDefault(_initialState);
 
@@ -50274,7 +50322,7 @@
 	}
 
 /***/ },
-/* 806 */
+/* 807 */
 /***/ function(module, exports) {
 
 	'use strict';

@@ -8,6 +8,7 @@ import CommandBarDemo from "../demos/commandBar";
 import ContextualMenuDemo from "../demos/contextualMenu";
 import DatePickerDemo from "../demos/datePicker";
 import DialogDemo from "../demos/dialog";
+import DropdownDemo from "../demos/dropdown";
 import {
     Pivot,
     PivotItem
@@ -46,6 +47,9 @@ const Navigation = () => {
             </PivotItem>
             <PivotItem linkText="Dialog">
                 <DialogDemo />
+            </PivotItem>
+            <PivotItem linkText="Dropdown">
+                <DropdownDemo />
             </PivotItem>
         </Pivot>
     );
