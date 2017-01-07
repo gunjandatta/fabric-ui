@@ -8206,7 +8206,7 @@
 
 	var _dashboard2 = _interopRequireDefault(_dashboard);
 
-	var _configureStore = __webpack_require__(801);
+	var _configureStore = __webpack_require__(802);
 
 	var _configureStore2 = _interopRequireDefault(_configureStore);
 
@@ -31790,6 +31790,10 @@
 
 	var _dropdown2 = _interopRequireDefault(_dropdown);
 
+	var _messageBar = __webpack_require__(801);
+
+	var _messageBar2 = _interopRequireDefault(_messageBar);
+
 	var _officeUiFabricReact = __webpack_require__(516);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -31851,6 +31855,11 @@
 	            _officeUiFabricReact.PivotItem,
 	            { linkText: "Dropdown" },
 	            _react2.default.createElement(_dropdown2.default, null)
+	        ),
+	        _react2.default.createElement(
+	            _officeUiFabricReact.PivotItem,
+	            { linkText: "Message Bar" },
+	            _react2.default.createElement(_messageBar2.default, null)
 	        )
 	    );
 	};
@@ -50104,23 +50113,103 @@
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	exports.default = configureStore;
 
-	var _redux = __webpack_require__(486);
+	var _react = __webpack_require__(299);
 
-	var _reducers = __webpack_require__(802);
+	var _react2 = _interopRequireDefault(_react);
 
-	var _reducers2 = _interopRequireDefault(_reducers);
+	var _datePickerData = __webpack_require__(797);
 
-	var _reduxThunk = __webpack_require__(807);
+	var _datePickerData2 = _interopRequireDefault(_datePickerData);
 
-	var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
+	var _officeUiFabricReact = __webpack_require__(516);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	function configureStore(initialState) {
-	    return (0, _redux.createStore)(_reducers2.default, initialState, (0, _redux.applyMiddleware)(_reduxThunk2.default));
-	}
+	/**
+	 * Message Bar Demo
+	 */
+	var MessageBarDemo = function MessageBarDemo() {
+	    // Render the component
+	    return _react2.default.createElement(
+	        "div",
+	        null,
+	        _react2.default.createElement(
+	            _officeUiFabricReact.MessageBar,
+	            null,
+	            _react2.default.createElement(
+	                _officeUiFabricReact.Label,
+	                null,
+	                "This is the 'default' message bar."
+	            )
+	        ),
+	        _react2.default.createElement(
+	            _officeUiFabricReact.MessageBar,
+	            { messageBarType: _officeUiFabricReact.MessageBarType.blocked },
+	            _react2.default.createElement(
+	                _officeUiFabricReact.Label,
+	                null,
+	                "This is the 'blocked' message bar."
+	            )
+	        ),
+	        _react2.default.createElement(
+	            _officeUiFabricReact.MessageBar,
+	            { messageBarType: _officeUiFabricReact.MessageBarType.error },
+	            _react2.default.createElement(
+	                _officeUiFabricReact.Label,
+	                null,
+	                "This is the 'error' message bar."
+	            )
+	        ),
+	        _react2.default.createElement(
+	            _officeUiFabricReact.MessageBar,
+	            { messageBarType: _officeUiFabricReact.MessageBarType.info },
+	            _react2.default.createElement(
+	                _officeUiFabricReact.Label,
+	                null,
+	                "This is the 'info' message bar."
+	            )
+	        ),
+	        _react2.default.createElement(
+	            _officeUiFabricReact.MessageBar,
+	            { messageBarType: _officeUiFabricReact.MessageBarType.remove },
+	            _react2.default.createElement(
+	                _officeUiFabricReact.Label,
+	                null,
+	                "This is the 'remove' message bar."
+	            )
+	        ),
+	        _react2.default.createElement(
+	            _officeUiFabricReact.MessageBar,
+	            { messageBarType: _officeUiFabricReact.MessageBarType.severeWarning },
+	            _react2.default.createElement(
+	                _officeUiFabricReact.Label,
+	                null,
+	                "This is the 'severe warning' message bar."
+	            )
+	        ),
+	        _react2.default.createElement(
+	            _officeUiFabricReact.MessageBar,
+	            { messageBarType: _officeUiFabricReact.MessageBarType.success },
+	            _react2.default.createElement(
+	                _officeUiFabricReact.Label,
+	                null,
+	                "This is the 'success' message bar."
+	            )
+	        ),
+	        _react2.default.createElement(
+	            _officeUiFabricReact.MessageBar,
+	            { messageBarType: _officeUiFabricReact.MessageBarType.warning },
+	            _react2.default.createElement(
+	                _officeUiFabricReact.Label,
+	                null,
+	                "This is the 'warning' message bar."
+	            )
+	        )
+	    );
+	};
+
+	exports.default = MessageBarDemo;
 
 /***/ },
 /* 802 */
@@ -50131,18 +50220,45 @@
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
+	exports.default = configureStore;
 
 	var _redux = __webpack_require__(486);
 
-	var _calloutReducer = __webpack_require__(803);
+	var _reducers = __webpack_require__(803);
+
+	var _reducers2 = _interopRequireDefault(_reducers);
+
+	var _reduxThunk = __webpack_require__(808);
+
+	var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function configureStore(initialState) {
+	    return (0, _redux.createStore)(_reducers2.default, initialState, (0, _redux.applyMiddleware)(_reduxThunk2.default));
+	}
+
+/***/ },
+/* 803 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _redux = __webpack_require__(486);
+
+	var _calloutReducer = __webpack_require__(804);
 
 	var _calloutReducer2 = _interopRequireDefault(_calloutReducer);
 
-	var _contextualMenuReducer = __webpack_require__(805);
+	var _contextualMenuReducer = __webpack_require__(806);
 
 	var _contextualMenuReducer2 = _interopRequireDefault(_contextualMenuReducer);
 
-	var _dialogReducer = __webpack_require__(806);
+	var _dialogReducer = __webpack_require__(807);
 
 	var _dialogReducer2 = _interopRequireDefault(_dialogReducer);
 
@@ -50157,7 +50273,7 @@
 	exports.default = rootReducer;
 
 /***/ },
-/* 803 */
+/* 804 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -50171,7 +50287,7 @@
 
 	var _actionTypes2 = _interopRequireDefault(_actionTypes);
 
-	var _initialState = __webpack_require__(804);
+	var _initialState = __webpack_require__(805);
 
 	var _initialState2 = _interopRequireDefault(_initialState);
 
@@ -50207,7 +50323,7 @@
 	}
 
 /***/ },
-/* 804 */
+/* 805 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -50222,7 +50338,7 @@
 	};
 
 /***/ },
-/* 805 */
+/* 806 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -50236,7 +50352,7 @@
 
 	var _actionTypes2 = _interopRequireDefault(_actionTypes);
 
-	var _initialState = __webpack_require__(804);
+	var _initialState = __webpack_require__(805);
 
 	var _initialState2 = _interopRequireDefault(_initialState);
 
@@ -50272,7 +50388,7 @@
 	}
 
 /***/ },
-/* 806 */
+/* 807 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -50286,7 +50402,7 @@
 
 	var _actionTypes2 = _interopRequireDefault(_actionTypes);
 
-	var _initialState = __webpack_require__(804);
+	var _initialState = __webpack_require__(805);
 
 	var _initialState2 = _interopRequireDefault(_initialState);
 
@@ -50322,7 +50438,7 @@
 	}
 
 /***/ },
-/* 807 */
+/* 808 */
 /***/ function(module, exports) {
 
 	'use strict';
