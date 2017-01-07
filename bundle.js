@@ -8206,7 +8206,7 @@
 
 	var _dashboard2 = _interopRequireDefault(_dashboard);
 
-	var _configureStore = __webpack_require__(802);
+	var _configureStore = __webpack_require__(803);
 
 	var _configureStore2 = _interopRequireDefault(_configureStore);
 
@@ -31794,6 +31794,10 @@
 
 	var _messageBar2 = _interopRequireDefault(_messageBar);
 
+	var _nav = __webpack_require__(802);
+
+	var _nav2 = _interopRequireDefault(_nav);
+
 	var _officeUiFabricReact = __webpack_require__(516);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -31860,6 +31864,11 @@
 	            _officeUiFabricReact.PivotItem,
 	            { linkText: "Message Bar" },
 	            _react2.default.createElement(_messageBar2.default, null)
+	        ),
+	        _react2.default.createElement(
+	            _officeUiFabricReact.PivotItem,
+	            { linkText: "Nav" },
+	            _react2.default.createElement(_nav2.default, null)
 	        )
 	    );
 	};
@@ -50118,10 +50127,6 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _datePickerData = __webpack_require__(797);
-
-	var _datePickerData2 = _interopRequireDefault(_datePickerData);
-
 	var _officeUiFabricReact = __webpack_require__(516);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -50220,23 +50225,49 @@
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	exports.default = configureStore;
 
-	var _redux = __webpack_require__(486);
+	var _react = __webpack_require__(299);
 
-	var _reducers = __webpack_require__(803);
+	var _react2 = _interopRequireDefault(_react);
 
-	var _reducers2 = _interopRequireDefault(_reducers);
-
-	var _reduxThunk = __webpack_require__(808);
-
-	var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
+	var _officeUiFabricReact = __webpack_require__(516);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	function configureStore(initialState) {
-	    return (0, _redux.createStore)(_reducers2.default, initialState, (0, _redux.applyMiddleware)(_reduxThunk2.default));
-	}
+	/**
+	 * Nav Demo
+	 */
+	var NavDemo = function NavDemo() {
+	    // Render the component
+	    return _react2.default.createElement(_officeUiFabricReact.Nav, {
+	        groups: [{
+	            links: [{
+	                name: 'Home',
+	                url: 'http://dattabase.com',
+	                links: [{
+	                    name: 'Activity',
+	                    url: 'http://msn.com',
+	                    key: 'key1'
+	                }, {
+	                    name: 'News',
+	                    url: 'http://msn.com',
+	                    key: 'key2'
+	                }],
+	                isExpanded: true
+	            }, { name: 'Documents', url: 'http://dattabase.com', key: 'key3', isExpanded: true }, { name: 'Pages', url: 'http://msn.com', key: 'key4' }, { name: 'Notebook', url: 'http://msn.com', key: 'key5' }, { name: 'Long Name Test for elipse', url: 'http://msn.com', key: 'key6' }, {
+	                name: 'Edit',
+	                url: 'http://cnn.com',
+	                icon: 'Edit',
+	                key: 'key8'
+	            }]
+	        }],
+	        expandedStateText: 'expanded',
+	        collapsedStateText: 'collapsed',
+	        selectedKey: 'key3'
+	    });
+	};
+
+	exports.default = NavDemo;
 
 /***/ },
 /* 803 */
@@ -50247,18 +50278,45 @@
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
+	exports.default = configureStore;
 
 	var _redux = __webpack_require__(486);
 
-	var _calloutReducer = __webpack_require__(804);
+	var _reducers = __webpack_require__(804);
+
+	var _reducers2 = _interopRequireDefault(_reducers);
+
+	var _reduxThunk = __webpack_require__(809);
+
+	var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function configureStore(initialState) {
+	    return (0, _redux.createStore)(_reducers2.default, initialState, (0, _redux.applyMiddleware)(_reduxThunk2.default));
+	}
+
+/***/ },
+/* 804 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _redux = __webpack_require__(486);
+
+	var _calloutReducer = __webpack_require__(805);
 
 	var _calloutReducer2 = _interopRequireDefault(_calloutReducer);
 
-	var _contextualMenuReducer = __webpack_require__(806);
+	var _contextualMenuReducer = __webpack_require__(807);
 
 	var _contextualMenuReducer2 = _interopRequireDefault(_contextualMenuReducer);
 
-	var _dialogReducer = __webpack_require__(807);
+	var _dialogReducer = __webpack_require__(808);
 
 	var _dialogReducer2 = _interopRequireDefault(_dialogReducer);
 
@@ -50273,7 +50331,7 @@
 	exports.default = rootReducer;
 
 /***/ },
-/* 804 */
+/* 805 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -50287,7 +50345,7 @@
 
 	var _actionTypes2 = _interopRequireDefault(_actionTypes);
 
-	var _initialState = __webpack_require__(805);
+	var _initialState = __webpack_require__(806);
 
 	var _initialState2 = _interopRequireDefault(_initialState);
 
@@ -50323,7 +50381,7 @@
 	}
 
 /***/ },
-/* 805 */
+/* 806 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -50338,7 +50396,7 @@
 	};
 
 /***/ },
-/* 806 */
+/* 807 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -50352,7 +50410,7 @@
 
 	var _actionTypes2 = _interopRequireDefault(_actionTypes);
 
-	var _initialState = __webpack_require__(805);
+	var _initialState = __webpack_require__(806);
 
 	var _initialState2 = _interopRequireDefault(_initialState);
 
@@ -50388,7 +50446,7 @@
 	}
 
 /***/ },
-/* 807 */
+/* 808 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -50402,7 +50460,7 @@
 
 	var _actionTypes2 = _interopRequireDefault(_actionTypes);
 
-	var _initialState = __webpack_require__(805);
+	var _initialState = __webpack_require__(806);
 
 	var _initialState2 = _interopRequireDefault(_initialState);
 
@@ -50438,7 +50496,7 @@
 	}
 
 /***/ },
-/* 808 */
+/* 809 */
 /***/ function(module, exports) {
 
 	'use strict';

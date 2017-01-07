@@ -1,5 +1,4 @@
 import React from "react";
-import strings from "../../data/datePickerData";
 import {
     Label,
     MessageBar,

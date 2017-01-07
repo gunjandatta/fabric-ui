@@ -10,6 +10,7 @@ import DatePickerDemo from "../demos/datePicker";
 import DialogDemo from "../demos/dialog";
 import DropdownDemo from "../demos/dropdown";
 import MessageBarDemo from "../demos/messageBar";
+import NavDemo from "../demos/nav";
 import {
     Pivot,
     PivotItem
@@ -54,6 +55,9 @@ const Navigation = () => {
             </PivotItem>
             <PivotItem linkText="Message Bar">
                 <MessageBarDemo />
+            </PivotItem>
+            <PivotItem linkText="Nav">
+                <NavDemo />
             </PivotItem>
         </Pivot>
     );
