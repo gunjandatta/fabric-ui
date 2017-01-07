@@ -8206,7 +8206,7 @@
 
 	var _dashboard2 = _interopRequireDefault(_dashboard);
 
-	var _configureStore = __webpack_require__(793);
+	var _configureStore = __webpack_require__(794);
 
 	var _configureStore2 = _interopRequireDefault(_configureStore);
 
@@ -31758,11 +31758,15 @@
 
 	var _callout2 = _interopRequireDefault(_callout);
 
-	var _commandBar = __webpack_require__(790);
+	var _checkbox = __webpack_require__(790);
+
+	var _checkbox2 = _interopRequireDefault(_checkbox);
+
+	var _commandBar = __webpack_require__(791);
 
 	var _commandBar2 = _interopRequireDefault(_commandBar);
 
-	var _dialog = __webpack_require__(791);
+	var _dialog = __webpack_require__(792);
 
 	var _dialog2 = _interopRequireDefault(_dialog);
 
@@ -31787,6 +31791,11 @@
 	            _officeUiFabricReact.PivotItem,
 	            { linkText: "Callout" },
 	            _react2.default.createElement(_callout2.default, null)
+	        ),
+	        _react2.default.createElement(
+	            _officeUiFabricReact.PivotItem,
+	            { linkText: "Checkbox" },
+	            _react2.default.createElement(_checkbox2.default, null)
 	        ),
 	        _react2.default.createElement(
 	            _officeUiFabricReact.PivotItem,
@@ -49394,6 +49403,40 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	/**
+	 * Checkbox Demo
+	 */
+	var CheckboxDemo = function CheckboxDemo() {
+	    // Render the component
+	    return _react2.default.createElement(
+	        "div",
+	        null,
+	        _react2.default.createElement(_officeUiFabricReact.Checkbox, { label: "Demo" }),
+	        _react2.default.createElement(_officeUiFabricReact.Checkbox, { label: "Checked by Default", defaultChecked: true }),
+	        _react2.default.createElement(_officeUiFabricReact.Checkbox, { label: "Disabled", disabled: true })
+	    );
+	};
+
+	exports.default = CheckboxDemo;
+
+/***/ },
+/* 791 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _react = __webpack_require__(299);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _officeUiFabricReact = __webpack_require__(516);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	/**
 	 * Command Bar Demo
 	 */
 	var CommandBarDemo = function CommandBarDemo() {
@@ -49441,7 +49484,7 @@
 	exports.default = CommandBarDemo;
 
 /***/ },
-/* 791 */
+/* 792 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -49458,7 +49501,7 @@
 
 	var _reactRedux = __webpack_require__(475);
 
-	var _dialogActions = __webpack_require__(792);
+	var _dialogActions = __webpack_require__(793);
 
 	var dialogActions = _interopRequireWildcard(_dialogActions);
 
@@ -49550,7 +49593,7 @@
 	})(DialogDemo);
 
 /***/ },
-/* 792 */
+/* 793 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -49584,7 +49627,7 @@
 	}
 
 /***/ },
-/* 793 */
+/* 794 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -49596,11 +49639,11 @@
 
 	var _redux = __webpack_require__(486);
 
-	var _reducers = __webpack_require__(794);
+	var _reducers = __webpack_require__(795);
 
 	var _reducers2 = _interopRequireDefault(_reducers);
 
-	var _reduxThunk = __webpack_require__(798);
+	var _reduxThunk = __webpack_require__(799);
 
 	var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
@@ -49611,7 +49654,7 @@
 	}
 
 /***/ },
-/* 794 */
+/* 795 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -49622,11 +49665,11 @@
 
 	var _redux = __webpack_require__(486);
 
-	var _calloutReducer = __webpack_require__(795);
+	var _calloutReducer = __webpack_require__(796);
 
 	var _calloutReducer2 = _interopRequireDefault(_calloutReducer);
 
-	var _dialogReducer = __webpack_require__(797);
+	var _dialogReducer = __webpack_require__(798);
 
 	var _dialogReducer2 = _interopRequireDefault(_dialogReducer);
 
@@ -49640,7 +49683,7 @@
 	exports.default = rootReducer;
 
 /***/ },
-/* 795 */
+/* 796 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -49654,7 +49697,7 @@
 
 	var _actionTypes2 = _interopRequireDefault(_actionTypes);
 
-	var _initialState = __webpack_require__(796);
+	var _initialState = __webpack_require__(797);
 
 	var _initialState2 = _interopRequireDefault(_initialState);
 
@@ -49690,7 +49733,7 @@
 	}
 
 /***/ },
-/* 796 */
+/* 797 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -49704,7 +49747,7 @@
 	};
 
 /***/ },
-/* 797 */
+/* 798 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -49718,7 +49761,7 @@
 
 	var _actionTypes2 = _interopRequireDefault(_actionTypes);
 
-	var _initialState = __webpack_require__(796);
+	var _initialState = __webpack_require__(797);
 
 	var _initialState2 = _interopRequireDefault(_initialState);
 
@@ -49754,7 +49797,7 @@
 	}
 
 /***/ },
-/* 798 */
+/* 799 */
 /***/ function(module, exports) {
 
 	'use strict';

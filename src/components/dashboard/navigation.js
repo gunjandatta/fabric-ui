@@ -1,6 +1,7 @@
 import React from "react";
 import BreadcrumbDemo from "../demos/breadcrumb";
 import CalloutDemo from "../demos/callout";
+import CheckboxDemo from "../demos/checkbox";
 import CommandBarDemo from "../demos/commandBar";
 import DialogDemo from "../demos/dialog";
 import {
@@ -20,6 +21,9 @@ const Navigation = () => {
             </PivotItem>
             <PivotItem linkText="Callout">
                 <CalloutDemo />
+            </PivotItem>
+            <PivotItem linkText="Checkbox">
+                <CheckboxDemo />
             </PivotItem>
             <PivotItem linkText="Command Bar">
                 <CommandBarDemo />
