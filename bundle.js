@@ -23760,7 +23760,13 @@
 	        _react2.default.createElement(
 	            _officeUiFabricReact.Label,
 	            null,
-	            "This github project will give examples of using the Microsoft Office Fabric UI React framework and Redux."
+	            "This ",
+	            _react2.default.createElement(
+	                _officeUiFabricReact.Link,
+	                { href: "https://github.com/gunjandatta/fabric-ui" },
+	                "github project"
+	            ),
+	            " will give examples of using the Microsoft Office Fabric UI React framework and Redux."
 	        ),
 	        _react2.default.createElement(_navigation2.default, null)
 	    );
