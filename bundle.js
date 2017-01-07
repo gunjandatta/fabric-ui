@@ -49401,8 +49401,39 @@
 	    return _react2.default.createElement(_officeUiFabricReact.CommandBar, {
 	        isSearchBoxVisible: true,
 	        items: [{
-	            key: "test",
-	            name: "Test"
+	            key: "newRequest",
+	            name: "New",
+	            icon: "Add",
+	            ariaLabel: 'New. Use left and right arrow keys to navigate',
+	            onClick: function onClick(event) {
+	                return event.preventDefault();
+	            },
+	            items: [{
+	                key: 'emailMessage',
+	                name: 'Email message',
+	                icon: 'Mail'
+	            }, {
+	                key: 'calendarEvent',
+	                name: 'Calendar event',
+	                icon: 'Calendar'
+	            }]
+	        }, {
+	            key: "upload",
+	            name: 'Upload',
+	            icon: "Upload"
+	        }],
+	        farItems: [{
+	            key: 'sort',
+	            name: 'Sort',
+	            icon: 'SortLines'
+	        }, {
+	            key: 'tile',
+	            name: 'Grid view',
+	            icon: 'Tiles'
+	        }, {
+	            key: 'info',
+	            name: 'Info',
+	            icon: 'Info'
 	        }]
 	    });
 	};
