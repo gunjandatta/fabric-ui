@@ -10,7 +10,7 @@ module.exports = {
         // HTML
         html: "./index.html",
         // JS
-        javascript: "./index.js"
+        javascript: ["babel-polyfill", "./index.js"]
     },
 
     // Output
