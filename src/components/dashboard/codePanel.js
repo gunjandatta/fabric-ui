@@ -18,6 +18,7 @@ const CodePanel = (props) => {
         // Read the code file from github
         window.handleCORSRequest = (res) => {
             // Decode the content
+            // Note - replace method is required for IE
             codePanel.innerText = atob(res.data.content.replace(/\s/g, ''));
         }
         let script = document.createElement("script");
