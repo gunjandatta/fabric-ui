@@ -12,6 +12,8 @@ import DropdownDemo from "../demos/dropdown";
 import MessageBarDemo from "../demos/messageBar";
 import NavDemo from "../demos/nav";
 import SliderDemo from "../demos/slider"
+import SpinnerDemo from "../demos/spinner";
+import TextFieldDemo from "../demos/textField";
 import {
     Pivot,
     PivotItem
@@ -62,6 +64,12 @@ const Navigation = () => {
             </PivotItem>
             <PivotItem linkText="Slider">
                 <SliderDemo />
+            </PivotItem>
+            <PivotItem linkText="Spinner">
+                <SpinnerDemo />
+            </PivotItem>
+            <PivotItem linkText="Text Field">
+                <TextFieldDemo />
             </PivotItem>
         </Pivot>
     );

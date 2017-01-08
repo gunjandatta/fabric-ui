@@ -8206,7 +8206,7 @@
 
 	var _dashboard2 = _interopRequireDefault(_dashboard);
 
-	var _configureStore = __webpack_require__(804);
+	var _configureStore = __webpack_require__(806);
 
 	var _configureStore2 = _interopRequireDefault(_configureStore);
 
@@ -31802,6 +31802,14 @@
 
 	var _slider2 = _interopRequireDefault(_slider);
 
+	var _spinner = __webpack_require__(804);
+
+	var _spinner2 = _interopRequireDefault(_spinner);
+
+	var _textField = __webpack_require__(805);
+
+	var _textField2 = _interopRequireDefault(_textField);
+
 	var _officeUiFabricReact = __webpack_require__(516);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -31878,6 +31886,16 @@
 	            _officeUiFabricReact.PivotItem,
 	            { linkText: "Slider" },
 	            _react2.default.createElement(_slider2.default, null)
+	        ),
+	        _react2.default.createElement(
+	            _officeUiFabricReact.PivotItem,
+	            { linkText: "Spinner" },
+	            _react2.default.createElement(_spinner2.default, null)
+	        ),
+	        _react2.default.createElement(
+	            _officeUiFabricReact.PivotItem,
+	            { linkText: "Text Field" },
+	            _react2.default.createElement(_textField2.default, null)
 	        )
 	    );
 	};
@@ -50326,23 +50344,61 @@
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	exports.default = configureStore;
 
-	var _redux = __webpack_require__(486);
+	var _react = __webpack_require__(299);
 
-	var _reducers = __webpack_require__(805);
+	var _react2 = _interopRequireDefault(_react);
 
-	var _reducers2 = _interopRequireDefault(_reducers);
-
-	var _reduxThunk = __webpack_require__(810);
-
-	var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
+	var _officeUiFabricReact = __webpack_require__(516);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	function configureStore(initialState) {
-	    return (0, _redux.createStore)(_reducers2.default, initialState, (0, _redux.applyMiddleware)(_reduxThunk2.default));
-	}
+	/**
+	 * Spinner Demo
+	 */
+	var SpinnerDemo = function SpinnerDemo() {
+	    // Render the component
+	    return _react2.default.createElement(
+	        "div",
+	        { style: { width: "250px" } },
+	        _react2.default.createElement(
+	            _officeUiFabricReact.Label,
+	            null,
+	            "Default"
+	        ),
+	        _react2.default.createElement(_officeUiFabricReact.Spinner, {
+	            label: "Loading..."
+	        }),
+	        _react2.default.createElement(
+	            _officeUiFabricReact.Label,
+	            null,
+	            "Normal with label"
+	        ),
+	        _react2.default.createElement(_officeUiFabricReact.Spinner, {
+	            label: "Loading...",
+	            type: _officeUiFabricReact.SpinnerType.normal
+	        }),
+	        _react2.default.createElement(
+	            _officeUiFabricReact.Label,
+	            null,
+	            "Large"
+	        ),
+	        _react2.default.createElement(_officeUiFabricReact.Spinner, {
+	            type: _officeUiFabricReact.SpinnerType.large
+	        }),
+	        _react2.default.createElement(
+	            _officeUiFabricReact.Label,
+	            null,
+	            "Large with label"
+	        ),
+	        _react2.default.createElement(_officeUiFabricReact.Spinner, {
+	            label: "Loading...",
+	            type: _officeUiFabricReact.SpinnerType.large
+	        })
+	    );
+	};
+
+	exports.default = SpinnerDemo;
 
 /***/ },
 /* 805 */
@@ -50354,17 +50410,106 @@
 	    value: true
 	});
 
+	var _react = __webpack_require__(299);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _officeUiFabricReact = __webpack_require__(516);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	/**
+	 * Text Field Demo
+	 */
+	var TextFieldDemo = function TextFieldDemo() {
+	    // Render the component
+	    return _react2.default.createElement(
+	        "div",
+	        { style: { width: "250px" } },
+	        _react2.default.createElement(_officeUiFabricReact.TextField, {
+	            label: "Default Textfield"
+	        }),
+	        _react2.default.createElement(_officeUiFabricReact.TextField, {
+	            disabled: true,
+	            label: "Disabled Textfield"
+	        }),
+	        _react2.default.createElement(_officeUiFabricReact.TextField, {
+	            ariaLabel: "This text field is required",
+	            errorMessage: "Please enter a value",
+	            label: "Required Textfield",
+	            required: true
+	        }),
+	        _react2.default.createElement(_officeUiFabricReact.TextField, {
+	            label: "Textfield with Placeholder",
+	            placeholder: "Enter a Value"
+	        }),
+	        _react2.default.createElement(_officeUiFabricReact.TextField, {
+	            label: "Resizable Multiline Textfield",
+	            multiline: true,
+	            resizable: true
+	        }),
+	        _react2.default.createElement(_officeUiFabricReact.TextField, {
+	            label: "Unresizable Multiline Textfield",
+	            multiline: true,
+	            resizable: false
+	        }),
+	        _react2.default.createElement(_officeUiFabricReact.TextField, {
+	            label: "Underlined Textfield",
+	            underlined: true
+	        })
+	    );
+	};
+
+	exports.default = TextFieldDemo;
+
+/***/ },
+/* 806 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.default = configureStore;
+
 	var _redux = __webpack_require__(486);
 
-	var _calloutReducer = __webpack_require__(806);
+	var _reducers = __webpack_require__(807);
+
+	var _reducers2 = _interopRequireDefault(_reducers);
+
+	var _reduxThunk = __webpack_require__(812);
+
+	var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function configureStore(initialState) {
+	    return (0, _redux.createStore)(_reducers2.default, initialState, (0, _redux.applyMiddleware)(_reduxThunk2.default));
+	}
+
+/***/ },
+/* 807 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _redux = __webpack_require__(486);
+
+	var _calloutReducer = __webpack_require__(808);
 
 	var _calloutReducer2 = _interopRequireDefault(_calloutReducer);
 
-	var _contextualMenuReducer = __webpack_require__(808);
+	var _contextualMenuReducer = __webpack_require__(810);
 
 	var _contextualMenuReducer2 = _interopRequireDefault(_contextualMenuReducer);
 
-	var _dialogReducer = __webpack_require__(809);
+	var _dialogReducer = __webpack_require__(811);
 
 	var _dialogReducer2 = _interopRequireDefault(_dialogReducer);
 
@@ -50379,7 +50524,7 @@
 	exports.default = rootReducer;
 
 /***/ },
-/* 806 */
+/* 808 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -50393,7 +50538,7 @@
 
 	var _actionTypes2 = _interopRequireDefault(_actionTypes);
 
-	var _initialState = __webpack_require__(807);
+	var _initialState = __webpack_require__(809);
 
 	var _initialState2 = _interopRequireDefault(_initialState);
 
@@ -50429,7 +50574,7 @@
 	}
 
 /***/ },
-/* 807 */
+/* 809 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -50444,7 +50589,7 @@
 	};
 
 /***/ },
-/* 808 */
+/* 810 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -50458,7 +50603,7 @@
 
 	var _actionTypes2 = _interopRequireDefault(_actionTypes);
 
-	var _initialState = __webpack_require__(807);
+	var _initialState = __webpack_require__(809);
 
 	var _initialState2 = _interopRequireDefault(_initialState);
 
@@ -50494,7 +50639,7 @@
 	}
 
 /***/ },
-/* 809 */
+/* 811 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -50508,7 +50653,7 @@
 
 	var _actionTypes2 = _interopRequireDefault(_actionTypes);
 
-	var _initialState = __webpack_require__(807);
+	var _initialState = __webpack_require__(809);
 
 	var _initialState2 = _interopRequireDefault(_initialState);
 
@@ -50544,7 +50689,7 @@
 	}
 
 /***/ },
-/* 810 */
+/* 812 */
 /***/ function(module, exports) {
 
 	'use strict';
