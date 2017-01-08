@@ -8206,7 +8206,7 @@
 
 	var _dashboard2 = _interopRequireDefault(_dashboard);
 
-	var _configureStore = __webpack_require__(809);
+	var _configureStore = __webpack_require__(808);
 
 	var _configureStore2 = _interopRequireDefault(_configureStore);
 
@@ -31790,35 +31790,35 @@
 
 	var _datePicker2 = _interopRequireDefault(_datePicker);
 
-	var _dialog = __webpack_require__(800);
+	var _dialog = __webpack_require__(799);
 
 	var _dialog2 = _interopRequireDefault(_dialog);
 
-	var _dropdown = __webpack_require__(802);
+	var _dropdown = __webpack_require__(801);
 
 	var _dropdown2 = _interopRequireDefault(_dropdown);
 
-	var _messageBar = __webpack_require__(803);
+	var _messageBar = __webpack_require__(802);
 
 	var _messageBar2 = _interopRequireDefault(_messageBar);
 
-	var _nav = __webpack_require__(804);
+	var _nav = __webpack_require__(803);
 
 	var _nav2 = _interopRequireDefault(_nav);
 
-	var _slider = __webpack_require__(805);
+	var _slider = __webpack_require__(804);
 
 	var _slider2 = _interopRequireDefault(_slider);
 
-	var _spinner = __webpack_require__(806);
+	var _spinner = __webpack_require__(805);
 
 	var _spinner2 = _interopRequireDefault(_spinner);
 
-	var _textField = __webpack_require__(807);
+	var _textField = __webpack_require__(806);
 
 	var _textField2 = _interopRequireDefault(_textField);
 
-	var _toggle = __webpack_require__(808);
+	var _toggle = __webpack_require__(807);
 
 	var _toggle2 = _interopRequireDefault(_toggle);
 
@@ -31969,7 +31969,7 @@
 	        datePicker: "datePicker",
 	        dialog: "dialog",
 	        dropdown: "dropdown"
-	    }, _defineProperty(_Code, "dialog", "dialog"), _defineProperty(_Code, "dropdown", "dropdown"), _defineProperty(_Code, "messageBar", "messageBar"), _defineProperty(_Code, "nav", "nav"), _defineProperty(_Code, "slider", "slider"), _defineProperty(_Code, "spinner", "spinner"), _defineProperty(_Code, "textField", "textField"), _defineProperty(_Code, "toggle", "toggle.js"), _Code),
+	    }, _defineProperty(_Code, "dialog", "dialog"), _defineProperty(_Code, "dropdown", "dropdown"), _defineProperty(_Code, "messageBar", "messageBar"), _defineProperty(_Code, "nav", "nav"), _defineProperty(_Code, "slider", "slider"), _defineProperty(_Code, "spinner", "spinner"), _defineProperty(_Code, "textField", "textField"), _defineProperty(_Code, "toggle", "toggle"), _Code),
 	    // Hide Actions
 	    Hide: {
 	        Dialog: "HideDialog",
@@ -50115,13 +50115,24 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _datePickerData = __webpack_require__(799);
-
-	var _datePickerData2 = _interopRequireDefault(_datePickerData);
-
 	var _officeUiFabricReact = __webpack_require__(517);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	/**
+	 * Date Picker Strings
+	 */
+	var datePickerStrings = {
+	    months: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+
+	    shortMonths: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+
+	    days: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+
+	    shortDays: ["S", "M", "T", "W", "T", "F", "S"],
+
+	    goToToday: "Go to Today"
+	};
 
 	/**
 	 * Date Picker Demo
@@ -50134,7 +50145,7 @@
 	        _react2.default.createElement(_officeUiFabricReact.DatePicker, {
 	            firstDayOfWeek: _officeUiFabricReact.DayOfWeek.Sunday,
 	            placeholder: "Select a date...",
-	            strings: _datePickerData2.default
+	            strings: datePickerStrings
 	        })
 	    );
 	};
@@ -50143,27 +50154,6 @@
 
 /***/ },
 /* 799 */
-/***/ function(module, exports) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	exports.default = {
-	    months: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
-
-	    shortMonths: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-
-	    days: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-
-	    shortDays: ["S", "M", "T", "W", "T", "F", "S"],
-
-	    goToToday: "Go to Today"
-	};
-
-/***/ },
-/* 800 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -50180,7 +50170,7 @@
 
 	var _reactRedux = __webpack_require__(475);
 
-	var _dialogActions = __webpack_require__(801);
+	var _dialogActions = __webpack_require__(800);
 
 	var dialogActions = _interopRequireWildcard(_dialogActions);
 
@@ -50272,7 +50262,7 @@
 	})(DialogDemo);
 
 /***/ },
-/* 801 */
+/* 800 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -50306,7 +50296,7 @@
 	}
 
 /***/ },
-/* 802 */
+/* 801 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -50318,10 +50308,6 @@
 	var _react = __webpack_require__(299);
 
 	var _react2 = _interopRequireDefault(_react);
-
-	var _datePickerData = __webpack_require__(799);
-
-	var _datePickerData2 = _interopRequireDefault(_datePickerData);
 
 	var _officeUiFabricReact = __webpack_require__(517);
 
@@ -50345,7 +50331,7 @@
 	exports.default = DropdownDemo;
 
 /***/ },
-/* 803 */
+/* 802 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -50448,7 +50434,7 @@
 	exports.default = MessageBarDemo;
 
 /***/ },
-/* 804 */
+/* 803 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -50501,7 +50487,7 @@
 	exports.default = NavDemo;
 
 /***/ },
-/* 805 */
+/* 804 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -50540,7 +50526,7 @@
 	exports.default = SliderDemo;
 
 /***/ },
-/* 806 */
+/* 805 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -50605,7 +50591,7 @@
 	exports.default = SpinnerDemo;
 
 /***/ },
-/* 807 */
+/* 806 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -50667,7 +50653,7 @@
 	exports.default = TextFieldDemo;
 
 /***/ },
-/* 808 */
+/* 807 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -50715,7 +50701,7 @@
 	exports.default = ToggleDemo;
 
 /***/ },
-/* 809 */
+/* 808 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -50727,11 +50713,11 @@
 
 	var _redux = __webpack_require__(486);
 
-	var _reducers = __webpack_require__(810);
+	var _reducers = __webpack_require__(809);
 
 	var _reducers2 = _interopRequireDefault(_reducers);
 
-	var _reduxThunk = __webpack_require__(816);
+	var _reduxThunk = __webpack_require__(815);
 
 	var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
@@ -50742,7 +50728,7 @@
 	}
 
 /***/ },
-/* 810 */
+/* 809 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -50753,19 +50739,19 @@
 
 	var _redux = __webpack_require__(486);
 
-	var _calloutReducer = __webpack_require__(811);
+	var _calloutReducer = __webpack_require__(810);
 
 	var _calloutReducer2 = _interopRequireDefault(_calloutReducer);
 
-	var _contextualMenuReducer = __webpack_require__(813);
+	var _contextualMenuReducer = __webpack_require__(812);
 
 	var _contextualMenuReducer2 = _interopRequireDefault(_contextualMenuReducer);
 
-	var _dialogReducer = __webpack_require__(814);
+	var _dialogReducer = __webpack_require__(813);
 
 	var _dialogReducer2 = _interopRequireDefault(_dialogReducer);
 
-	var _panelReducer = __webpack_require__(815);
+	var _panelReducer = __webpack_require__(814);
 
 	var _panelReducer2 = _interopRequireDefault(_panelReducer);
 
@@ -50781,7 +50767,7 @@
 	exports.default = rootReducer;
 
 /***/ },
-/* 811 */
+/* 810 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -50795,7 +50781,7 @@
 
 	var _actionTypes2 = _interopRequireDefault(_actionTypes);
 
-	var _initialState = __webpack_require__(812);
+	var _initialState = __webpack_require__(811);
 
 	var _initialState2 = _interopRequireDefault(_initialState);
 
@@ -50831,7 +50817,7 @@
 	}
 
 /***/ },
-/* 812 */
+/* 811 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -50847,7 +50833,7 @@
 	};
 
 /***/ },
-/* 813 */
+/* 812 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -50861,7 +50847,7 @@
 
 	var _actionTypes2 = _interopRequireDefault(_actionTypes);
 
-	var _initialState = __webpack_require__(812);
+	var _initialState = __webpack_require__(811);
 
 	var _initialState2 = _interopRequireDefault(_initialState);
 
@@ -50897,7 +50883,7 @@
 	}
 
 /***/ },
-/* 814 */
+/* 813 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -50911,7 +50897,7 @@
 
 	var _actionTypes2 = _interopRequireDefault(_actionTypes);
 
-	var _initialState = __webpack_require__(812);
+	var _initialState = __webpack_require__(811);
 
 	var _initialState2 = _interopRequireDefault(_initialState);
 
@@ -50947,7 +50933,7 @@
 	}
 
 /***/ },
-/* 815 */
+/* 814 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -50961,7 +50947,7 @@
 
 	var _actionTypes2 = _interopRequireDefault(_actionTypes);
 
-	var _initialState = __webpack_require__(812);
+	var _initialState = __webpack_require__(811);
 
 	var _initialState2 = _interopRequireDefault(_initialState);
 
@@ -50997,7 +50983,7 @@
 	}
 
 /***/ },
-/* 816 */
+/* 815 */
 /***/ function(module, exports) {
 
 	'use strict';

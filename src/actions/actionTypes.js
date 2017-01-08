@@ -21,7 +21,7 @@ const ActionTypes = {
         slider: "slider",
         spinner: "spinner",
         textField: "textField",
-        toggle: "toggle.js"
+        toggle: "toggle"
     },
     // Hide Actions
     Hide: {
