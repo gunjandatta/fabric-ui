@@ -49650,14 +49650,18 @@
 	    var codeFile = props.codeFile,
 	        showPanel = props.showPanel;
 
-	    // Read the code file from github
+	    // Ensure we are displaying the panel
 
-	    window.handleCORSRequest = function (res) {
-	        document.querySelector("#codePanel").innerText = atob(res.data.content);
-	    };
-	    var script = document.createElement("script");
-	    script.src = "https://api.github.com/repos/gunjandatta/fabric-ui/contents/src/components/demos/" + codeFile + ".js?callback=handleCORSRequest";
-	    document.head.appendChild(script);
+	    if (showPanel) {
+	        // Read the code file from github
+	        window.handleCORSRequest = function (res) {
+	            // Decode the content
+	            codePanel.innerText = atob(res.data.content.replace(/\s/g, ''));
+	        };
+	        var script = document.createElement("script");
+	        script.src = "https://api.github.com/repos/gunjandatta/fabric-ui/contents/src/components/demos/" + codeFile + ".js?callback=handleCORSRequest";
+	        document.head.appendChild(script);
+	    }
 
 	    // Method to hide the panel
 	    var hide = function hide() {

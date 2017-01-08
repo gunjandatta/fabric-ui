@@ -13,13 +13,17 @@ import {
 const CodePanel = (props) => {
     let {codeFile, showPanel} = props;
 
-    // Read the code file from github
-    window.handleCORSRequest = (res) => {
-        document.querySelector("#codePanel").innerText = atob(res.data.content);
+    // Ensure we are displaying the panel
+    if(showPanel) {
+        // Read the code file from github
+        window.handleCORSRequest = (res) => {
+            // Decode the content
+            codePanel.innerText = atob(res.data.content.replace(/\s/g, ''));
+        }
+        let script = document.createElement("script");
+        script.src = "https://api.github.com/repos/gunjandatta/fabric-ui/contents/src/components/demos/" + codeFile + ".js?callback=handleCORSRequest";
+        document.head.appendChild(script);
     }
-    let script = document.createElement("script");
-    script.src = "https://api.github.com/repos/gunjandatta/fabric-ui/contents/src/components/demos/" + codeFile + ".js?callback=handleCORSRequest";
-    document.head.appendChild(script);
 
     // Method to hide the panel
     let hide = () => {
@@ -45,7 +49,7 @@ const CodePanel = (props) => {
                 isOpen={showPanel}
                 onDismiss={hide}
                 type={PanelType.medium}>
-                <code id="codePanel">Loading the code...</code>
+                <code id="codePanel">Loading the code...</code>                
             </Panel>
         </div>
     );
