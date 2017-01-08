@@ -49653,7 +49653,7 @@
 	    // Read the code file from github
 
 	    window.handleCORSRequest = function (res) {
-	        document.querySelector("#codePanel").innerHTML = atob(res.data.content);
+	        document.querySelector("#codePanel").innerText = atob(res.data.content);
 	    };
 	    var script = document.createElement("script");
 	    script.src = "https://api.github.com/repos/gunjandatta/fabric-ui/contents/src/components/demos/" + codeFile + ".js?callback=handleCORSRequest";
@@ -49692,7 +49692,7 @@
 	                onDismiss: hide,
 	                type: _officeUiFabricReact.PanelType.large },
 	            _react2.default.createElement(
-	                "pre",
+	                "code",
 	                { id: "codePanel" },
 	                "Loading the code..."
 	            )
