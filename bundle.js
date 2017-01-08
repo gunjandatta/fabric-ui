@@ -8206,7 +8206,7 @@
 
 	var _dashboard2 = _interopRequireDefault(_dashboard);
 
-	var _configureStore = __webpack_require__(803);
+	var _configureStore = __webpack_require__(804);
 
 	var _configureStore2 = _interopRequireDefault(_configureStore);
 
@@ -31798,6 +31798,10 @@
 
 	var _nav2 = _interopRequireDefault(_nav);
 
+	var _slider = __webpack_require__(803);
+
+	var _slider2 = _interopRequireDefault(_slider);
+
 	var _officeUiFabricReact = __webpack_require__(516);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -31869,6 +31873,11 @@
 	            _officeUiFabricReact.PivotItem,
 	            { linkText: "Nav" },
 	            _react2.default.createElement(_nav2.default, null)
+	        ),
+	        _react2.default.createElement(
+	            _officeUiFabricReact.PivotItem,
+	            { linkText: "Slider" },
+	            _react2.default.createElement(_slider2.default, null)
 	        )
 	    );
 	};
@@ -50278,23 +50287,35 @@
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	exports.default = configureStore;
 
-	var _redux = __webpack_require__(486);
+	var _react = __webpack_require__(299);
 
-	var _reducers = __webpack_require__(804);
+	var _react2 = _interopRequireDefault(_react);
 
-	var _reducers2 = _interopRequireDefault(_reducers);
-
-	var _reduxThunk = __webpack_require__(809);
-
-	var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
+	var _officeUiFabricReact = __webpack_require__(516);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	function configureStore(initialState) {
-	    return (0, _redux.createStore)(_reducers2.default, initialState, (0, _redux.applyMiddleware)(_reduxThunk2.default));
-	}
+	/**
+	 * Slider Demo
+	 */
+	var SliderDemo = function SliderDemo() {
+	    // Render the component
+	    return _react2.default.createElement(
+	        "div",
+	        { style: { width: "250px" } },
+	        _react2.default.createElement(_officeUiFabricReact.Slider, {
+	            label: "Demo Slider",
+	            defaultValue: 50,
+	            min: 0,
+	            max: 100,
+	            step: 1,
+	            showValue: true
+	        })
+	    );
+	};
+
+	exports.default = SliderDemo;
 
 /***/ },
 /* 804 */
@@ -50305,18 +50326,45 @@
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
+	exports.default = configureStore;
 
 	var _redux = __webpack_require__(486);
 
-	var _calloutReducer = __webpack_require__(805);
+	var _reducers = __webpack_require__(805);
+
+	var _reducers2 = _interopRequireDefault(_reducers);
+
+	var _reduxThunk = __webpack_require__(810);
+
+	var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function configureStore(initialState) {
+	    return (0, _redux.createStore)(_reducers2.default, initialState, (0, _redux.applyMiddleware)(_reduxThunk2.default));
+	}
+
+/***/ },
+/* 805 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _redux = __webpack_require__(486);
+
+	var _calloutReducer = __webpack_require__(806);
 
 	var _calloutReducer2 = _interopRequireDefault(_calloutReducer);
 
-	var _contextualMenuReducer = __webpack_require__(807);
+	var _contextualMenuReducer = __webpack_require__(808);
 
 	var _contextualMenuReducer2 = _interopRequireDefault(_contextualMenuReducer);
 
-	var _dialogReducer = __webpack_require__(808);
+	var _dialogReducer = __webpack_require__(809);
 
 	var _dialogReducer2 = _interopRequireDefault(_dialogReducer);
 
@@ -50331,7 +50379,7 @@
 	exports.default = rootReducer;
 
 /***/ },
-/* 805 */
+/* 806 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -50345,7 +50393,7 @@
 
 	var _actionTypes2 = _interopRequireDefault(_actionTypes);
 
-	var _initialState = __webpack_require__(806);
+	var _initialState = __webpack_require__(807);
 
 	var _initialState2 = _interopRequireDefault(_initialState);
 
@@ -50381,7 +50429,7 @@
 	}
 
 /***/ },
-/* 806 */
+/* 807 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -50396,7 +50444,7 @@
 	};
 
 /***/ },
-/* 807 */
+/* 808 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -50410,7 +50458,7 @@
 
 	var _actionTypes2 = _interopRequireDefault(_actionTypes);
 
-	var _initialState = __webpack_require__(806);
+	var _initialState = __webpack_require__(807);
 
 	var _initialState2 = _interopRequireDefault(_initialState);
 
@@ -50446,7 +50494,7 @@
 	}
 
 /***/ },
-/* 808 */
+/* 809 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -50460,7 +50508,7 @@
 
 	var _actionTypes2 = _interopRequireDefault(_actionTypes);
 
-	var _initialState = __webpack_require__(806);
+	var _initialState = __webpack_require__(807);
 
 	var _initialState2 = _interopRequireDefault(_initialState);
 
@@ -50496,7 +50544,7 @@
 	}
 
 /***/ },
-/* 809 */
+/* 810 */
 /***/ function(module, exports) {
 
 	'use strict';
