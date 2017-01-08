@@ -31715,9 +31715,14 @@
 	        "div",
 	        null,
 	        _react2.default.createElement(
-	            _officeUiFabricReact.Label,
+	            "h1",
 	            null,
 	            "Office Fabric UI"
+	        ),
+	        _react2.default.createElement(
+	            "h3",
+	            null,
+	            "React Code Examples"
 	        ),
 	        _react2.default.createElement(
 	            _officeUiFabricReact.Label,
@@ -31728,7 +31733,13 @@
 	                { href: "https://github.com/gunjandatta/fabric-ui" },
 	                "github project"
 	            ),
-	            " will give examples of using the Microsoft Office Fabric UI React framework and Redux."
+	            " will give examples of using the Microsoft Office Fabric UI components using React and Redux. Refer to my ",
+	            _react2.default.createElement(
+	                _officeUiFabricReact.Link,
+	                { href: "http://dattabase.com/office-fabric-ui-reactredux-part-1-5" },
+	                "blog post"
+	            ),
+	            " for a tutorial of developing SharePoint Hosted Add-Ins using the Microsoft Office UI Fabric React framework and Redux."
 	        ),
 	        _react2.default.createElement(_navigation2.default, null)
 	    );
@@ -49656,6 +49667,7 @@
 	        // Read the code file from github
 	        window.handleCORSRequest = function (res) {
 	            // Decode the content
+	            // Note - replace method is required for IE
 	            codePanel.innerText = atob(res.data.content.replace(/\s/g, ''));
 	        };
 	        var script = document.createElement("script");
