@@ -1,5 +1,6 @@
 export default {
     showCallout: false,
     showContextualMenu: false,
-    showDialog: false
+    showDialog: false,
+    showPanel: false
 };

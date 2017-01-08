@@ -1,8 +1,10 @@
 import React from "react";
+import ActionTypes from "../../actions/actionTypes";
 import BreadcrumbDemo from "../demos/breadcrumb";
 import CalloutDemo from "../demos/callout";
 import CheckboxDemo from "../demos/checkbox";
 import ChoiceGroupDemo from "../demos/choiceGroup";
+import CodePanel from "./codePanel";
 import ColorPickerDemo from "../demos/colorPicker";
 import CommandBarDemo from "../demos/commandBar";
 import ContextualMenuDemo from "../demos/contextualMenu";
@@ -26,56 +28,74 @@ import {
 const Navigation = () => {
     // Render the component
     return (
-        <Pivot>
-            <PivotItem linkText="Breadcrumb">
-                <BreadcrumbDemo />
-            </PivotItem>
-            <PivotItem linkText="Callout">
-                <CalloutDemo />
-            </PivotItem>
-            <PivotItem linkText="Checkbox">
-                <CheckboxDemo />
-            </PivotItem>
-            <PivotItem linkText="Choice Group">
-                <ChoiceGroupDemo />
-            </PivotItem>
-            <PivotItem linkText="Color Picker">
-                <ColorPickerDemo />
-            </PivotItem>
-            <PivotItem linkText="Command Bar">
-                <CommandBarDemo />
-            </PivotItem>
-            <PivotItem linkText="Contextual Menu">
-                <ContextualMenuDemo />
-            </PivotItem>
-            <PivotItem linkText="Date Picker">
-                <DatePickerDemo />
-            </PivotItem>
-            <PivotItem linkText="Dialog">
-                <DialogDemo />
-            </PivotItem>
-            <PivotItem linkText="Dropdown">
-                <DropdownDemo />
-            </PivotItem>
-            <PivotItem linkText="Message Bar">
-                <MessageBarDemo />
-            </PivotItem>
-            <PivotItem linkText="Nav">
-                <NavDemo />
-            </PivotItem>
-            <PivotItem linkText="Slider">
-                <SliderDemo />
-            </PivotItem>
-            <PivotItem linkText="Spinner">
-                <SpinnerDemo />
-            </PivotItem>
-            <PivotItem linkText="Text Field">
-                <TextFieldDemo />
-            </PivotItem>
-            <PivotItem linkText="Toggle">
-                <ToggleDemo />
-            </PivotItem>
-        </Pivot>
+        <div>
+            <Pivot>
+                <PivotItem linkText="Breadcrumb">
+                    <CodePanel codeFile={ActionTypes.Code.breadcrumb} />
+                    <BreadcrumbDemo />
+                </PivotItem>
+                <PivotItem linkText="Callout">
+                    <CodePanel codeFile={ActionTypes.Code.callout} />
+                    <CalloutDemo />
+                </PivotItem>
+                <PivotItem linkText="Checkbox">
+                    <CodePanel codeFile={ActionTypes.Code.checkbox} />
+                    <CheckboxDemo />
+                </PivotItem>
+                <PivotItem linkText="Choice Group">
+                    <CodePanel codeFile={ActionTypes.Code.choiceGroup} />
+                    <ChoiceGroupDemo />
+                </PivotItem>
+                <PivotItem linkText="Color Picker">
+                    <CodePanel codeFile={ActionTypes.Code.colorPicker} />
+                    <ColorPickerDemo />
+                </PivotItem>
+                <PivotItem linkText="Command Bar">
+                    <CodePanel codeFile={ActionTypes.Code.commandBar} />
+                    <CommandBarDemo />
+                </PivotItem>
+                <PivotItem linkText="Contextual Menu">
+                    <CodePanel codeFile={ActionTypes.Code.contextualMenu} />
+                    <ContextualMenuDemo />
+                </PivotItem>
+                <PivotItem linkText="Date Picker">
+                    <CodePanel codeFile={ActionTypes.Code.datePicker} />
+                    <DatePickerDemo />
+                </PivotItem>
+                <PivotItem linkText="Dialog">
+                    <CodePanel codeFile={ActionTypes.Code.dialog} />
+                    <DialogDemo />
+                </PivotItem>
+                <PivotItem linkText="Dropdown">
+                    <CodePanel codeFile={ActionTypes.Code.dropdown} />
+                    <DropdownDemo />
+                </PivotItem>
+                <PivotItem linkText="Message Bar">
+                    <CodePanel codeFile={ActionTypes.Code.messageBar} />
+                    <MessageBarDemo />
+                </PivotItem>
+                <PivotItem linkText="Nav">
+                    <CodePanel codeFile={ActionTypes.Code.nav} />
+                    <NavDemo />
+                </PivotItem>
+                <PivotItem linkText="Slider">
+                    <CodePanel codeFile={ActionTypes.Code.slider} />
+                    <SliderDemo />
+                </PivotItem>
+                <PivotItem linkText="Spinner">
+                    <CodePanel codeFile={ActionTypes.Code.spinner} />
+                    <SpinnerDemo />
+                </PivotItem>
+                <PivotItem linkText="Text Field">
+                    <CodePanel codeFile={ActionTypes.Code.textField} />
+                    <TextFieldDemo />
+                </PivotItem>
+                <PivotItem linkText="Toggle">
+                    <CodePanel codeFile={ActionTypes.Code.toggle} />
+                    <ToggleDemo />
+                </PivotItem>
+            </Pivot>
+        </div>
     );
 };
 
