@@ -44,7 +44,7 @@ const CodePanel = (props) => {
             <Panel
                 isOpen={showPanel}
                 onDismiss={hide}
-                type={PanelType.large}>
+                type={PanelType.medium}>
                 <code id="codePanel">Loading the code...</code>
             </Panel>
         </div>

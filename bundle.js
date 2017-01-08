@@ -49690,7 +49690,7 @@
 	            {
 	                isOpen: showPanel,
 	                onDismiss: hide,
-	                type: _officeUiFabricReact.PanelType.large },
+	                type: _officeUiFabricReact.PanelType.medium },
 	            _react2.default.createElement(
 	                "code",
 	                { id: "codePanel" },
