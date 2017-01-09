@@ -2,7 +2,7 @@ import React from "react";
 import { Toggle } from "office-ui-fabric-react";
 
 /**
- * To<ggle Demo
+ * Toggle Demo
  */
 const ToggleDemo = () => {
     // Render the component
